@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   googleId: String,
   accessToken: String,
+  refreshToken: String,
   savingsTotal: { type: Number, default: 0 }
 }, { timestamps: true });
 

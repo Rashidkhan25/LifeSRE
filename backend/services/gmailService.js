@@ -23,11 +23,9 @@ function extractTextFromPayload(payload) {
       }
     }
   }
-
   return "";
 }
 
-// 🔥 ADD THIS HERE
 const renewalKeywords = [
   "renew",
   "auto debit",
@@ -35,28 +33,35 @@ const renewalKeywords = [
   "subscription renewal",
   "policy valid",
   "will be charged",
-  "billing"
+  "billing",
 ];
 
 function isRenewalEmail(text) {
   if (!text) return false;
+
   const lowerText = text.toLowerCase();
-  return renewalKeywords.some(keyword => lowerText.includes(keyword));
+  return renewalKeywords.some((keyword) =>
+    lowerText.includes(keyword)
+  );
 }
 
-async function fetchFullEmails(accessToken) {
-  oauth2Client.setCredentials({ access_token: accessToken });
+async function fetchFullEmails(user) { 
+  oauth2Client.setCredentials({
+    access_token: user.accessToken,
+    refresh_token: user.refreshToken,
+  });
 
   const gmail = google.gmail({ version: "v1", auth: oauth2Client });
 
   const listResponse = await gmail.users.messages.list({
-  userId: "me",
-  maxResults: 10,
-  includeSpamTrash: true,
-  q: "renew OR charged OR subscription OR expires"
-});
+    userId: "me",
+    maxResults: 10,
+    includeSpamTrash: true,
+    q: "renew OR charged OR subscription OR expires",
+  });
 
   const messages = listResponse.data.messages || [];
+
   const filteredEmails = [];
 
   for (let msg of messages) {
@@ -69,7 +74,6 @@ async function fetchFullEmails(accessToken) {
     const payload = message.data.payload;
     const textContent = extractTextFromPayload(payload);
 
-    // 🔥 Only push renewal-related emails
     if (isRenewalEmail(textContent)) {
       filteredEmails.push({
         id: msg.id,

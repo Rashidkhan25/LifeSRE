@@ -1,18 +1,19 @@
 const express = require("express");
 const router = express.Router();
 const oauth2Client = require("../config/googleAuth");
-const User = require("../models/user");
+const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 const { google } = require("googleapis");
 
 router.get("/google", (req, res) => {
   const url = oauth2Client.generateAuthUrl({
-    access_type: "offline",
-    scope: [
-      "https://www.googleapis.com/auth/gmail.readonly",
-      "https://www.googleapis.com/auth/userinfo.email",
-      "https://www.googleapis.com/auth/userinfo.profile"
-    ]
+  access_type: "offline",
+  prompt: "consent",
+  scope: [
+    "https://www.googleapis.com/auth/gmail.readonly",
+    "https://www.googleapis.com/auth/userinfo.email",
+    "https://www.googleapis.com/auth/userinfo.profile"
+  ]
   });
 
   console.log("Generated URL:");
@@ -28,7 +29,7 @@ router.get("/google/callback", async (req, res) => {
 
   const oauth2 = google.oauth2({
     auth: oauth2Client,
-    version: "v2"
+    version: "v2",
   });
 
   const { data } = await oauth2.userinfo.get();
@@ -40,7 +41,8 @@ router.get("/google/callback", async (req, res) => {
       name: data.name,
       email: data.email,
       googleId: data.id,
-      accessToken: tokens.access_token
+      accessToken: tokens.access_token,
+      refreshToken: tokens.refresh_token,
     });
   }
 
