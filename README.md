@@ -158,17 +158,17 @@ Create a `.env` file inside the **backend folder**.
 Example:
 
 PORT=8000
-MONGO_URI=your_mongodb_uri
+*MONGO_URI=your_mongodb_uri
 
 GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
+*GOOGLE_CLIENT_SECRET=your_google_client_secret
 
 OPENAI_API_KEY=your_openai_key
 
 TWILIO_SID=your_twilio_sid
-TWILIO_AUTH_TOKEN=your_twilio_auth_token
-TWILIO_WHATSAPP_NUMBER=your_twilio_whatsapp_number
-USER_WHATSAPP_NUMBER=your_phone_number
+*TWILIO_AUTH_TOKEN=your_twilio_auth_token
+*TWILIO_WHATSAPP_NUMBER=your_twilio_whatsapp_number
+*USER_WHATSAPP_NUMBER=your_phone_number
 
 ---
 
@@ -206,13 +206,13 @@ http://localhost:5173
 # 🔄 Example Workflow
 
 1️⃣ User logs in with Google
-2️⃣ LifeSRE scans Gmail for subscription emails
-3️⃣ AI extracts contract details
-4️⃣ Risk engine evaluates upcoming renewals
-5️⃣ Dashboard displays contracts and risks
-6️⃣ User can **Switch & Save** with one click
-7️⃣ Cancellation email is sent automatically
-8️⃣ Savings are recorded and tracked
+*2️⃣ LifeSRE scans Gmail for subscription emails
+*3️⃣ AI extracts contract details
+*4️⃣ Risk engine evaluates upcoming renewals
+*5️⃣ Dashboard displays contracts and risks
+*6️⃣ User can **Switch & Save** with one click
+*7️⃣ Cancellation email is sent automatically
+*8️⃣ Savings are recorded and tracked
 
 ---
 
