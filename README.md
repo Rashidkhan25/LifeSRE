@@ -11,7 +11,7 @@ The system applies **Site Reliability Engineering (SRE)** principles to personal
 # 🌐 Live Application
 
 **Frontend:**
-https://lifesre.vercel.app
+https://life-sre.vercel.app
 
 **Backend API:**
 https://lifesre-backend.onrender.com
