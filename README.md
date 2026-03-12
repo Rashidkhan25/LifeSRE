@@ -10,10 +10,10 @@ The system applies **Site Reliability Engineering (SRE)** principles to personal
 
 # 🌐 Live Application
 
-Frontend:
+**Frontend:**
 https://lifesre.vercel.app
 
-Backend API:
+**Backend API:**
 https://lifesre-backend.onrender.com
 
 ---
@@ -132,22 +132,28 @@ To run the project locally:
 
 ## 1️⃣ Clone the Repository
 
+```bash
 git clone https://github.com/yourusername/lifesre.git
 cd lifesre
+```
 
 ---
 
 ## 2️⃣ Install Backend Dependencies
 
+```bash
 cd backend
 npm install
+```
 
 ---
 
 ## 3️⃣ Install Frontend Dependencies
 
+```bash
 cd ../frontend
 npm install
+```
 
 ---
 
@@ -157,40 +163,55 @@ Create a `.env` file inside the **backend folder**.
 
 Example:
 
+```env
 PORT=8000
-*MONGO_URI=your_mongodb_uri
+
+MONGO_URI=your_mongodb_uri
 
 GOOGLE_CLIENT_ID=your_google_client_id
-*GOOGLE_CLIENT_SECRET=your_google_client_secret
+
+GOOGLE_CLIENT_SECRET=your_google_client_secret
 
 OPENAI_API_KEY=your_openai_key
 
 TWILIO_SID=your_twilio_sid
-*TWILIO_AUTH_TOKEN=your_twilio_auth_token
-*TWILIO_WHATSAPP_NUMBER=your_twilio_whatsapp_number
-*USER_WHATSAPP_NUMBER=your_phone_number
+
+TWILIO_AUTH_TOKEN=your_twilio_auth_token
+
+TWILIO_WHATSAPP_NUMBER=your_twilio_whatsapp_number
+
+USER_WHATSAPP_NUMBER=your_phone_number
+```
 
 ---
 
 ## 5️⃣ Start Backend Server
 
+```bash
 cd backend
 npm start
+```
 
 Backend runs on:
 
+```
 http://localhost:8000
+```
 
 ---
 
 ## 6️⃣ Start Frontend
 
+```bash
 cd frontend
 npm run dev
+```
 
 Frontend runs on:
 
+```
 http://localhost:5173
+```
 
 ---
 
@@ -206,13 +227,20 @@ http://localhost:5173
 # 🔄 Example Workflow
 
 1️⃣ User logs in with Google
-*2️⃣ LifeSRE scans Gmail for subscription emails
-*3️⃣ AI extracts contract details
-*4️⃣ Risk engine evaluates upcoming renewals
-*5️⃣ Dashboard displays contracts and risks
-*6️⃣ User can **Switch & Save** with one click
-*7️⃣ Cancellation email is sent automatically
-*8️⃣ Savings are recorded and tracked
+
+2️⃣ LifeSRE scans Gmail for subscription emails
+
+3️⃣ AI extracts contract details
+
+4️⃣ Risk engine evaluates upcoming renewals
+
+5️⃣ Dashboard displays contracts and risks
+
+6️⃣ User can **Switch & Save** with one click
+
+7️⃣ Cancellation email is sent automatically
+
+8️⃣ Savings are recorded and tracked
 
 ---
 
@@ -221,4 +249,3 @@ http://localhost:5173
 This project is intended for **educational and portfolio use**.
 
 Please contact the author before commercial use or redistribution.
-
