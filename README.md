@@ -194,57 +194,6 @@ http://localhost:5173
 
 ---
 
-# 📦 Project Structure
-
-LifeSRE/
-
-├── frontend/
-│   ├── src/
-│   │   ├── api/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── styles/
-│   │   └── main.jsx
-│   │
-│   ├── index.html
-│   └── package.json
-│
-
-├── backend/
-│   ├── config/
-│   │   ├── db.js
-│   │   └── googleAuth.js
-│   │
-
-│   ├── models/
-│   │   ├── Contract.js
-│   │   ├── User.js
-│   │   └── AuditLog.js
-│   │
-
-│   ├── routes/
-│   │   ├── authRoutes.js
-│   │   ├── gmailRoutes.js
-│   │   ├── dashboardRoutes.js
-│   │   └── contractRoutes.js
-│   │
-
-│   ├── services/
-│   │   ├── gmailService.js
-│   │   ├── extractionService.js
-│   │   ├── riskEngine.js
-│   │   ├── remediationService.js
-│   │   ├── whatsappService.js
-│   │   └── scheduler.js
-│   │
-
-│   ├── server.js
-│   └── package.json
-
-└── README.md
-
----
-
 # 🔐 Security
 
 * OAuth based Gmail authentication
